@@ -1,0 +1,494 @@
+{
+ "generated": "2026-10-23",
+ "note": "Domains not checked live; mirrors rotate. No public source lists separate sub-clones of Winwin/Fairpari/Fastpari, only rotating mirrors.",
+ "family": [
+  {
+   "name": "1xBet",
+   "main_domain": "1xbet.com",
+   "evidence": [
+    "https://betclone.org/"
+   ],
+   "confidence": "high",
+   "notes": "parent (BetB2B)",
+   "domain_verified": false
+  },
+  {
+   "name": "Melbet",
+   "main_domain": "melbet.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Betwinner",
+   "main_domain": "betwinner.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "22Bet",
+   "main_domain": "22bet.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Megapari",
+   "main_domain": "megapari.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "user said 'Megafari'",
+   "domain_verified": false
+  },
+  {
+   "name": "888starz",
+   "main_domain": "888starz.bet",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Paripesa",
+   "main_domain": "paripesa.bet",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Fairpari",
+   "main_domain": "fairpari.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Fastpari",
+   "main_domain": "fastpari.com",
+   "evidence": [
+    "https://clones.bet/"
+   ],
+   "confidence": "medium",
+   "notes": "one source",
+   "domain_verified": false
+  },
+  {
+   "name": "Winwin",
+   "main_domain": "winwin.bet",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Linebet",
+   "main_domain": "linebet.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Helabet",
+   "main_domain": "helabet.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "high",
+   "notes": "flagged 'avoid' by clones.bet",
+   "domain_verified": false
+  },
+  {
+   "name": "Betandyou",
+   "main_domain": "betandyou.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "DB-Bet",
+   "main_domain": "dbbet.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "user said 'DBB/DBbet'",
+   "domain_verified": false
+  },
+  {
+   "name": "Doublebet",
+   "main_domain": "doublebet.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "medium",
+   "notes": "user said 'Double Bet'",
+   "domain_verified": false
+  },
+  {
+   "name": "Betlabel",
+   "main_domain": "betlabel.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Spinbetter",
+   "main_domain": "spinbetter.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Sapphirebet",
+   "main_domain": "sapphirebet.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "1xBit",
+   "main_domain": "1xbit.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "crypto",
+   "domain_verified": false
+  },
+  {
+   "name": "Betpari",
+   "main_domain": "betpari.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "high",
+   "notes": "possible match for 'Bo Bet'/'Vifari'",
+   "domain_verified": false
+  },
+  {
+   "name": "Xparibet",
+   "main_domain": "xparibet.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "medium",
+   "notes": "possible match for 'Vifari'",
+   "domain_verified": false
+  },
+  {
+   "name": "Coldbet",
+   "main_domain": "coldbet.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Planbet",
+   "main_domain": "planbet.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Casinoandyou",
+   "main_domain": "casinoandyou.com",
+   "evidence": [
+    "https://clones.bet/",
+    "https://betclone.org/"
+   ],
+   "confidence": "medium",
+   "notes": "casino-focused",
+   "domain_verified": false
+  },
+  {
+   "name": "Coinplay",
+   "main_domain": "coinplay.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "medium",
+   "notes": "crypto",
+   "domain_verified": false
+  },
+  {
+   "name": "Betongame",
+   "main_domain": "betongame.com",
+   "evidence": [
+    "https://betclone.org/"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Lilbet",
+   "main_domain": "lilbet.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Astekbet",
+   "main_domain": "astekbet.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Fan Sport",
+   "main_domain": "fan-sport.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Oppa88/Oppabet",
+   "main_domain": "oppa88.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Vivatbet",
+   "main_domain": "vivatbet.ee",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet",
+    "https://stavki.xyz/bukmekerskie-kontory-pohozhie-na-1xbet.html"
+   ],
+   "confidence": "medium",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "1xStavka",
+   "main_domain": "1xstavka.ru",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "medium",
+   "notes": "RU-licensed",
+   "domain_verified": false
+  },
+  {
+   "name": "Playbaze",
+   "main_domain": "playbaze.com",
+   "evidence": [
+    "https://clones.bet/"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Asprobet",
+   "main_domain": "asprobet.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Bet2fun",
+   "main_domain": "bet2fun.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Betadrian",
+   "main_domain": "betadrian.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Playwetten",
+   "main_domain": "playwetten.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Retivabet",
+   "main_domain": "retivabet.com",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Stavkabet",
+   "main_domain": "stavkabet.kz",
+   "evidence": [
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "",
+   "domain_verified": false
+  },
+  {
+   "name": "Mostbet",
+   "main_domain": "mostbet.com",
+   "evidence": [
+    "https://betclone.org/",
+    "https://www.sharkbetting.com/alternatives/1xbet"
+   ],
+   "confidence": "low",
+   "notes": "disputed; generally own platform",
+   "domain_verified": false
+  }
+ ],
+ "unclear": [
+  {
+   "spoken": "DB Games",
+   "status": "no family brand found; maybe the user's own brand"
+  },
+  {
+   "spoken": "Bo Bet",
+   "status": "no exact match; Betpari? (SBOBET is NOT 1xBet family)"
+  },
+  {
+   "spoken": "Vifari",
+   "status": "no exact match; Betpari / Xparibet / Vivatbet?"
+  }
+ ],
+ "excluded": [
+  {
+   "name": "Bettilt",
+   "reason": "not 1xBet family"
+  },
+  {
+   "name": "Vbet",
+   "reason": "own platform"
+  },
+  {
+   "name": "SBOBET",
+   "reason": "own platform"
+  },
+  {
+   "name": "Pinnacle",
+   "reason": "own platform"
+  }
+ ]
+}

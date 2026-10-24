@@ -1,0 +1,20 @@
+source,bookmaker,team_name,canonical_hint,note
+real:mostbet/upcoming_lines.json,Mostbet,Gomel,gomel,real Mostbet title
+EXAMPLE(not real),1xBet,FC Gomel,gomel,illustrative 1xBet-style variant
+EXAMPLE(not real),SBOBET,Gomel FC,gomel,illustrative SBOBET-style variant
+real:mostbet/upcoming_lines.json,Mostbet,Dinamo Minsk,dinamo minsk,real
+EXAMPLE(not real),1xBet,Dinamo Minsk FC,dinamo minsk,illustrative
+EXAMPLE(not real),SBOBET,FK Dinamo Minsk,dinamo minsk,illustrative
+real:mostbet/upcoming_lines.json,Mostbet,Inter Milan,internazionale,real
+EXAMPLE(not real),1xBet,Inter,internazionale,illustrative
+EXAMPLE(not real),SBOBET,Internazionale Milano,internazionale,illustrative
+real:mostbet/upcoming_lines.json,Mostbet,PSG,paris saint germain,real
+EXAMPLE(not real),1xBet,Paris Saint-Germain,paris saint germain,illustrative
+EXAMPLE(not real),SBOBET,Paris SG,paris saint germain,illustrative
+real:mostbet/upcoming_lines.json,Mostbet,Sporting Lisbon,sporting cp,real
+EXAMPLE(not real),SBOBET,Sporting CP,sporting cp,illustrative
+real:mostbet/upcoming_lines.json,Mostbet,Leicester Сity U21,leicester city u21,real - contains Cyrillic С homoglyph
+EXAMPLE(not real),1xBet,Leicester City U21,leicester city u21,illustrative
+real:mostbet/upcoming_lines.json,Mostbet,Tottenham (w),tottenham women,real
+EXAMPLE(not real),1xBet,Tottenham Hotspur Women,tottenham women,illustrative
+EXAMPLE(not real),SBOBET,Tottenham (Women),tottenham women,illustrative

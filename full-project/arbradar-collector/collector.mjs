@@ -1,0 +1,101 @@
+// ArbRadar collector: opens Dolphin Anty profiles, reads public odds, sends to the site. Never places bets.
+import fs from "node:fs";
+import puppeteer from "puppeteer-core";
+const C = JSON.parse(fs.readFileSync(new URL("./config.json", import.meta.url)));
+const H = { Authorization: `Bearer ${C.DOLPHIN_TOKEN}`, "Content-Type": "application/json" };
+const NAME = { "1xbet":"1xBet", melbet:"Melbet", betwinner:"Betwinner", "22bet":"22Bet", megapari:"MegaPari",
+  "888starz":"888Starz", paripesa:"PariPesa", fairpari:"FairPari", winwin:"WinWin", betforward:"BetForward" };
+const log = (...a) => console.log(new Date().toLocaleTimeString(), ...a);
+const CAPTURE = process.env.CAPTURE_ONLY === "1";
+if (CAPTURE) { Object.assign(NAME, { mostbet: "Mostbet", sbobet: "SBOBET" }); Object.assign(C.PROFILES, C.CAPTURE_PROFILES || {}); }
+
+async function login() {
+  const r = await fetch(`${C.LOCAL_API}/auth/login-with-token`, { method: "POST", headers: H, body: JSON.stringify({ token: C.DOLPHIN_TOKEN }) });
+  if (!r.ok) throw new Error("Dolphin login failed — is Dolphin Anty open and the token correct?");
+}
+async function profiles() {
+  const r = await fetch("https://dolphin-anty-api.com/browser_profiles?limit=100", { headers: H });
+  const j = await r.json();
+  return (j.data || []).map((p) => ({ id: p.id, key: String(p.name).trim().toLowerCase() })).filter((p) => C.PROFILES[p.key]);
+}
+async function open(p) {
+  const r = await fetch(`${C.LOCAL_API}/browser_profiles/${p.id}/start?automation=1`);
+  const j = await r.json();
+  if (!j.automation) throw new Error(`cannot start profile ${p.key}`);
+  const b = await puppeteer.connect({ browserWSEndpoint: `ws://127.0.0.1:${j.automation.port}${j.automation.wsEndpoint}`, defaultViewport: null });
+  const page = (await b.pages())[0] || (await b.newPage());
+  await page.goto(C.PROFILES[p.key], { waitUntil: "domcontentloaded", timeout: 60000 }).catch(() => {});
+  return page;
+}
+// 1xBet-family JSON feed, read from inside the real browser page (same cookies, no login).
+async function read1x(page, live) {
+  const path = live ? "LiveFeed/Get1x2_VZip?count=200&mode=4&getEmpty=true&partner=1"
+                    : "LineFeed/Get1x2_VZip?count=300&mode=4&getEmpty=true&partner=1";
+  return page.evaluate(async (path, live) => {
+    try {
+      const j = await (await fetch(`/${path}`)).json();
+      return (j.Value || []).map((e) => {
+        const o = {}; for (const x of e.E || []) if (x.G === 1 && [1,2,3].includes(x.T)) o[x.T] = x.C;
+        return { sport: e.SE || e.SN || "Football", league: e.L || "", home: e.O1, away: e.O2, start: e.S, live, o };
+      }).filter((e) => e.home && e.away && e.o[1] && e.o[3]);
+    } catch { return []; }
+  }, path, live);
+}
+const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+function build(all) {
+  const ev = new Map();
+  for (const { book, rows } of all) for (const r of rows) {
+    const k = `${norm(r.home)}|${norm(r.away)}|${r.live}`;
+    const e = ev.get(k) || { ...r, best: {} }; ev.set(k, e);
+    for (const t of [1, 2, 3]) { const v = r.o[t]; if (v > 1 && (!e.best[t] || v > e.best[t].odds)) e.best[t] = { odds: v, bookmaker: book }; }
+  }
+  const out = [];
+  for (const [k, e] of ev) {
+    const three = e.best[2]; const ts = three ? [1, 2, 3] : [1, 3];
+    if (!ts.every((t) => e.best[t])) continue;
+    if (new Set(ts.map((t) => e.best[t].bookmaker)).size < 2) continue;
+    const L = { 1: "1", 2: "X", 3: "2" };
+    out.push({ id: k.slice(0, 80), sport: String(e.sport).slice(0, 40), league: String(e.league).slice(0, 80),
+      event: `${e.home} vs ${e.away}`.slice(0, 160), market: three ? "1X2" : "Winner", live: e.live,
+      startsAt: new Date((e.start || 0) * 1000).toISOString(), source: "collector",
+      outcomes: ts.map((t) => ({ label: L[t], bookmaker: e.best[t].bookmaker, odds: +e.best[t].odds })) });
+  }
+  return out.slice(0, 500);
+}
+async function send(opps) {
+  if (!opps.length) return log("no cross-book opportunities this round");
+  const r = await fetch(C.WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json", "x-webhook-secret": C.WEBHOOK_SECRET }, body: JSON.stringify({ opportunities: opps }) });
+  log("sent", opps.length, "→", r.status);
+}
+await login();
+const ps = await profiles();
+log("profiles found:", ps.map((p) => p.key).join(", ") || "NONE (check profile names)");
+const pages = [];
+for (const p of ps) { try { pages.push({ book: NAME[p.key] || p.key, page: await open(p) }); log("opened", p.key); } catch (e) { log(e.message); } }
+if (CAPTURE) {
+  const cap = await import("./capture.mjs");
+  log("CAPTURE-ONLY mode: writing to captures\\ folder, nothing is sent to the website");
+  const sniff = new Map();
+  for (const { book, page } of pages) if (book === "SBOBET") sniff.set(book, cap.sniffSbobet(page));
+  for (;;) {
+    for (const { book, page } of pages) {
+      try {
+        let rows;
+        if (book === "Mostbet") rows = await cap.capMostbet(page);
+        else if (book === "SBOBET") { await page.reload({ waitUntil: "networkidle2", timeout: 90000 }).catch((e) => cap.errLog(book, "reload", e)); rows = sniff.get(book).drain(); }
+        else rows = [...(await cap.cap1x(book, page, true)), ...(await cap.cap1x(book, page, false))];
+        log(book, cap.writeRows(book, rows), "events captured");
+      } catch (e) { cap.errLog(book, "round", e); }
+    }
+    await new Promise((r) => setTimeout(r, Math.max(60, C.INTERVAL_SECONDS) * 1000));
+  }
+}
+for (;;) {
+  const all = [];
+  for (const { book, page } of pages) {
+    const rows = [...(await read1x(page, true)), ...(await read1x(page, false))];
+    log(book, rows.length, "events"); all.push({ book, rows });
+  }
+  await send(build(all)).catch((e) => log("send error", e.message));
+  await new Promise((r) => setTimeout(r, C.INTERVAL_SECONDS * 1000));
+}

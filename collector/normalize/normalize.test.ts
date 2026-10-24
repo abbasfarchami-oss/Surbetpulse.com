@@ -1,0 +1,27 @@
+import { test, expect } from "bun:test";
+import { cleanName, teamScore, matchEvents } from "./normalize";
+const T = Date.parse("2026-10-24T16:00:00Z"), LOG = "/workspace/arbradar/normalize/match-decisions.log";
+const o = { toleranceMin: 15, threshold: 0.8, log: LOG };
+test("Gomel vs FC Gomel", () => expect(teamScore("Gomel", "FC Gomel")).toBe(1));
+test("diacritics", () => expect(cleanName("Atlético Madrid").key).toBe(cleanName("Atletico Madrid").key));
+test("Cyrillic homoglyph (real Mostbet)", () => expect(teamScore("Leicester Сity U21", "Leicester City U21")).toBe(1));
+test("alias PSG", () => expect(teamScore("PSG", "Paris Saint-Germain")).toBe(1));
+test("alias Inter", () => expect(teamScore("Inter Milan", "Internazionale")).toBe(1));
+test("translit Dynamo/Dinamo", () => expect(teamScore("Dynamo Minsk", "FK Dinamo Minsk")).toBe(1));
+test("women vs men not matched", () => expect(teamScore("Tottenham (w)", "Tottenham")).toBe(0));
+test("women variants match", () => expect(teamScore("Tottenham (w)", "Tottenham Hotspur Women")).toBe(1));
+test("U21 vs senior not matched", () => expect(teamScore("Chelsea U21", "Chelsea")).toBe(0));
+test("U21 vs U19 not matched", () => expect(teamScore("Chelsea U21", "Chelsea U19")).toBe(0));
+test("reserves not matched to first team", () => expect(teamScore("Barcelona B", "Barcelona")).toBe(0));
+test("different teams not matched", () => expect(teamScore("Manchester United", "Manchester City")).toBeLessThan(0.8));
+test("event match", () => { const d = matchEvents({ book:"Mostbet", home:"Gomel", away:"Dinamo Minsk", kickoff:T }, { book:"1xBet", home:"FC Gomel", away:"Dynamo Minsk", kickoff:T+5*60000 }, o); expect(d.match).toBe(true); expect(d.swapped).toBe(false); });
+test("swapped home/away flagged", () => { const d = matchEvents({ book:"SBOBET", home:"Gomel", away:"Dinamo Minsk", kickoff:T }, { book:"1xBet", home:"Dinamo Minsk", away:"FC Gomel", kickoff:T }, o); expect(d.match).toBe(true); expect(d.swapped).toBe(true); });
+test("kickoff outside tolerance", () => expect(matchEvents({ book:"a", home:"Gomel", away:"Dinamo Minsk", kickoff:T }, { book:"b", home:"Gomel", away:"Dinamo Minsk", kickoff:T+3*3600000 }, o).match).toBe(false));
+
+const ev = (home: string, away: string, league?: string) => ({ book: "x", home, away, kickoff: T, league });
+test("Leicester vs Leicester City, same league -> match", () => { const d = matchEvents(ev("Leicester","Luton Town","England. Championship"), ev("Leicester City","Luton Town","Championship"), o); expect(d.match).toBe(true); expect(d.reason).toContain("league confirmed"); });
+test("Leicester vs Leicester City, different league -> near-miss", () => { const d = matchEvents(ev("Leicester","Luton Town","England. Championship"), ev("Leicester City","Luton Town","Spain. La Liga"), o); expect(d.match).toBe(false); expect(d.reason).toContain("near-miss"); });
+test("Leicester vs Leicester City, empty league -> near-miss", () => { const d = matchEvents(ev("Leicester","Luton Town",""), ev("Leicester City","Luton Town"), o); expect(d.match).toBe(false); expect(d.reason).toContain("near-miss"); });
+test("Manchester vs Manchester United, no league -> no match", () => expect(matchEvents(ev("Manchester","Arsenal"), ev("Manchester United","Arsenal"), o).match).toBe(false));
+test("Manchester vs Manchester City, no league -> no match", () => expect(matchEvents(ev("Manchester","Arsenal"), ev("Manchester City","Arsenal"), o).match).toBe(false));
+test("full names still match without league", () => expect(matchEvents(ev("FC Gomel","Dinamo Minsk"), ev("Gomel","Dynamo Minsk"), o).match).toBe(true));

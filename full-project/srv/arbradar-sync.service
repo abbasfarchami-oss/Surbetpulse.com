@@ -1,0 +1,5 @@
+[Unit]
+Description=ArbRadar data sync to Google Drive
+[Service]
+Type=oneshot
+ExecStart=/root/arbradar-data/bin/arbradar-sync.sh

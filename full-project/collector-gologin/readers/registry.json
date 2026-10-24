@@ -1,0 +1,130 @@
+{
+ "_note": "One standalone reader per bookmaker. No main reader / sub-branches. enabled=false by default for all new readers; 1xbet and sbobet keep their previous enabled state.",
+ "readers": [
+  {
+   "key": "1xbet",
+   "file": "books/1xbet.mjs",
+   "enabled": true
+  },
+  {
+   "key": "1xbit",
+   "file": "books/1xbit.mjs",
+   "enabled": false
+  },
+  {
+   "key": "22bet",
+   "file": "books/22bet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "888starz",
+   "file": "books/888starz.mjs",
+   "enabled": false
+  },
+  {
+   "key": "bet365",
+   "file": "books/bet365.mjs",
+   "enabled": false
+  },
+  {
+   "key": "betandyou",
+   "file": "books/betandyou.mjs",
+   "enabled": false
+  },
+  {
+   "key": "betforward",
+   "file": "books/betforward.mjs",
+   "enabled": false
+  },
+  {
+   "key": "betlabel",
+   "file": "books/betlabel.mjs",
+   "enabled": false
+  },
+  {
+   "key": "betpari",
+   "file": "books/betpari.mjs",
+   "enabled": false
+  },
+  {
+   "key": "betwinner",
+   "file": "books/betwinner.mjs",
+   "enabled": false
+  },
+  {
+   "key": "dbbet",
+   "file": "books/dbbet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "doublebet",
+   "file": "books/doublebet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "fairpari",
+   "file": "books/fairpari.mjs",
+   "enabled": false
+  },
+  {
+   "key": "fastpari",
+   "file": "books/fastpari.mjs",
+   "enabled": false
+  },
+  {
+   "key": "helabet",
+   "file": "books/helabet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "linebet",
+   "file": "books/linebet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "megapari",
+   "file": "books/megapari.mjs",
+   "enabled": false
+  },
+  {
+   "key": "melbet",
+   "file": "books/melbet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "paripesa",
+   "file": "books/paripesa.mjs",
+   "enabled": false
+  },
+  {
+   "key": "pinnacle",
+   "file": "books/pinnacle.mjs",
+   "enabled": false
+  },
+  {
+   "key": "sapphirebet",
+   "file": "books/sapphirebet.mjs",
+   "enabled": false
+  },
+  {
+   "key": "sbobet",
+   "file": "books/sbobet.mjs",
+   "enabled": true
+  },
+  {
+   "key": "spinbetter",
+   "file": "books/spinbetter.mjs",
+   "enabled": false
+  },
+  {
+   "key": "williamhill",
+   "file": "books/williamhill.mjs",
+   "enabled": false
+  },
+  {
+   "key": "winwin",
+   "file": "books/winwin.mjs",
+   "enabled": false
+  }
+ ]
+}

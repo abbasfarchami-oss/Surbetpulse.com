@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792828164734,
+      "tag": "0000_cloud_admin_catalog_subscriptions",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792828479230,
+      "tag": "0001_complete_bookmaker_price_defaults",
+      "breakpoints": true
+    }
+  ]
+}

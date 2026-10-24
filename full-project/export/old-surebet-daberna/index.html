@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/assets/styles-Bg_--Q9u.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" data-precedence="default"/><title>ArbRadar — Surebet, Arbitrage &amp; Value Bet Scanner</title><meta name="description" content="Live and prematch 2-way / 3-way surebets, value bets and dropping odds with a guaranteed-profit stake calculator."/><meta property="og:title" content="ArbRadar — Surebet &amp; Value Bet Scanner"/><meta property="og:description" content="Live arbitrage feed, dropping odds alerts and a USD stake calculator."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary"/><link rel="modulepreload" href="/assets/index-AH4Gt3VF.js"/><link rel="modulepreload" href="/assets/routes-D4tP3Tu7.js"/><link rel="modulepreload" href="/assets/button-DY8OwZN-.js"/><link rel="modulepreload" href="/assets/arb-CuNXACS6.js"/><link rel="modulepreload" href="/assets/accounts-BXsf4uQ7.js"/><link rel="modulepreload" href="/assets/AppShell-CrC8thGY.js"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+<style>
+	#lovable-badge {
+		--badge-bg: #1b1b1b;
+		--badge-text: #c5c1b9;
+		--badge-text-hover: #dcdad5;
+		--badge-radius: 6px;
+		--badge-padding: 8px;
+		--badge-gap: 6px;
+		--badge-shadow: 
+			0 0 0 1px rgba(0, 0, 0, 0.88),
+			0 1px 0 0 rgba(0, 0, 0, 0.04),
+			0 2px 2px -1px rgba(0, 0, 0, 0.08),
+			0 4px 4px -2px rgba(0, 0, 0, 0.08),
+			0 8px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 16px -8px rgba(0, 0, 0, 0.08);
+		--badge-transition-duration: 0.2s;
+		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+		--focus-color: #575ECF;
+		--focus-offset: 2px;
+		--focus-width: 2px;
+		
+		position: fixed;
+		bottom: 12px;
+		right: 12px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		z-index: 1000000;
+		background-color: var(--badge-bg) !important;
+		color: var(--badge-text) !important;
+		border-radius: var(--badge-radius);
+		box-shadow: var(--badge-shadow) !important;
+		font-size: 12px;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-weight: 400 !important;
+		text-transform: none !important;
+		font-feature-settings: normal !important;
+		transform: translateZ(0);
+		will-change: transform, opacity;
+		transition: opacity var(--badge-transition-duration) var(--badge-transition-easing);
+	}
+
+	#lovable-badge.closing {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	#lovable-badge-cta {
+		display: flex;
+		align-items: baseline;
+		gap: var(--badge-gap);
+		box-sizing: border-box;
+		padding: 4px var(--badge-padding) 0;
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-cta:hover {
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--badge-text-hover);
+	}
+
+	#lovable-badge-cta:active {
+		transform: scale(0.98);
+	}
+
+	#lovable-badge-cta:focus {
+		outline: none;
+	}
+
+	#lovable-badge-cta:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: var(--focus-offset);
+		z-index: 1;
+	}
+
+	#lovable-badge-text {
+		line-height: 1;
+	}
+
+	/* The wordmark baseline sits at y=12 of the 16px logo; an empty 12px box
+	   makes that the flex baseline so the text aligns to it on any system font. */
+	#lovable-badge-logo {
+		position: relative;
+		display: block;
+		width: 52px;
+		height: 12px;
+	}
+
+	#lovable-badge-logo svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	#lovable-badge-divider {
+		width: 1px;
+		height: 24px;
+		background-color: rgba(255, 255, 255, 0.04);
+		flex-shrink: 0;
+	}
+
+	#lovable-badge-close {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+		flex-shrink: 0;
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-close:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#lovable-badge-close:active {
+		transform: scale(0.92);
+	}
+
+	#lovable-badge-close:focus {
+		outline: none;
+	}
+
+	#lovable-badge-close:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: calc(var(--focus-offset) * -1);
+		z-index: 1;
+	}
+
+	#lovable-badge-close svg path {
+		fill: var(--badge-text);
+		transition: fill var(--badge-transition-duration) ease;
+	}
+
+	#lovable-badge-close:hover svg path {
+		fill: var(--badge-text-hover);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#lovable-badge,
+		#lovable-badge-cta,
+		#lovable-badge-close,
+		#lovable-badge-close svg path {
+			transition: none;
+		}
+		
+		#lovable-badge-cta:active,
+		#lovable-badge-close:active {
+			transform: none;
+		}
+	}
+
+	@media (prefers-contrast: high) {
+		#lovable-badge {
+			--badge-bg: #000;
+			--badge-text: #fff;
+			--badge-text-hover: #fff;
+			border: 2px solid currentColor;
+		}
+		
+		#lovable-badge-cta:focus-visible,
+		#lovable-badge-close:focus-visible {
+			outline-width: 3px;
+		}
+	}
+</style>
+<script defer src="/~flock.js" data-proxy-url="/~api/analytics"></script><script defer src="/__l5e/events.b21a279f52bb8621.js" data-artifact-kind="dwl_content_hash" data-artifact-id="5617736c63adc00e09d5ee359bf671796132eff57b41f5c96d1113c7ea4edeb8" data-commit-sha="bf724a1a9ca492204a22369e1fdf3537f632dd48" data-context-token="v1.eyJwcm9qZWN0X2lkIjoibG92cF81ZDhobWhwMXFrOHdkczQ4M3o4a3BnYXoyMyIsImFydGlmYWN0X2tpbmQiOiJkd2xfY29udGVudF9oYXNoIiwiYXJ0aWZhY3RfaWQiOiI1NjE3NzM2YzYzYWRjMDBlMDlkNWVlMzU5YmY2NzE3OTYxMzJlZmY1N2I0MWY1Yzk2ZDExMTNjN2VhNGVkZWI4IiwiY29tbWl0X3NoYSI6ImJmNzI0YTFhOWNhNDkyMjA0YTIyMzY5ZTFmZGYzNTM3ZjYzMmRkNDgiLCJleHAiOjE3OTU0MzE2MjR9.lTsidiOrPjfcFiRa8apomuXQt_pAFxOISxPz8hw6nkY"></script><meta name="twitter:title" content="ArbRadar — Surebet &amp;amp; Value Bet Scanner"><meta name="twitter:description" content="Live arbitrage feed, dropping odds alerts and a USD stake calculator."><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_5d8hmhp1qk8wds483z8kpgaz23/92b1fe904900aa9281ec3bff9569dd2e_1792076594936.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_5d8hmhp1qk8wds483z8kpgaz23/92b1fe904900aa9281ec3bff9569dd2e_1792076594936.png"></head><body><!--$--><div class="flex min-h-screen flex-col"><header class="sticky top-0 z-20 border-b border-border bg-background/80 backdrop-blur"><div class="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-3"><a class="flex items-center gap-2 active" href="/" data-status="active" aria-current="page"><div class="grid h-9 w-9 place-items-center rounded-lg bg-primary font-extrabold text-primary-foreground">A</div><div><div class="font-extrabold tracking-tight">ArbRadar</div><div class="hidden text-xs text-muted-foreground sm:block">Live arbitrage, surebet &amp; value bet scanner</div></div></a><nav class="flex gap-1"><a class="rounded-lg px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground bg-secondary text-foreground" href="/" data-status="active" aria-current="page">Scanner</a><a class="rounded-lg px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground" href="/accounts">My accounts</a><a class="rounded-lg px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground" href="/plans">Plans</a><a class="rounded-lg px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground" href="/admin">Admin</a></nav><div class="ms-auto flex items-center gap-2"><button class="flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-sm hover:bg-secondary"><span class="h-2 w-2 rounded-full animate-pulse bg-primary"></span>Loading opportunities</button><a class="rounded-full border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent" href="/plans">Your plan<!-- -->: <!-- -->Free</a><select aria-label="Language" class="rounded-full border border-border bg-card px-3 py-1.5 text-sm"><option value="en" selected="">English</option><option value="fa">فارسی</option><option value="ar">العربية</option><option value="tr">Türkçe</option><option value="ckb">کوردی (سۆرانی)</option><option value="kmr">Kurdî (Kurmancî)</option></select></div></div></header><main class="mx-auto w-full max-w-7xl flex-1 px-4 py-6"><div class="grid gap-6 lg:grid-cols-[1fr_360px]"><section class="min-w-0 space-y-4"><div class="grid grid-cols-2 gap-3 md:grid-cols-4"><div class="min-w-0 rounded-xl border border-border bg-card p-3"><div class="min-h-8 text-xs text-muted-foreground">Opportunities</div><div class="num mt-1 min-h-7 text-xl font-semibold "><span aria-hidden="true">0</span><span class="sr-only">0</span></div></div><div class="min-w-0 rounded-xl border border-border bg-card p-3"><div class="min-h-8 text-xs text-muted-foreground">Avg. profit</div><div class="num mt-1 min-h-7 text-xl font-semibold text-primary"><span aria-hidden="true">0.00%</span><span class="sr-only">0.00%</span></div></div><div class="min-w-0 rounded-xl border border-border bg-card p-3"><div class="min-h-8 text-xs text-muted-foreground">Best</div><div class="num mt-1 min-h-7 text-xl font-semibold text-primary"><span aria-hidden="true">0.00%</span><span class="sr-only">0.00%</span></div></div><div class="min-w-0 rounded-xl border border-border bg-card p-3"><div class="min-h-8 text-xs text-muted-foreground">Dropping odds</div><div class="num mt-1 min-h-7 text-xl font-semibold "><span aria-hidden="true">0</span><span class="sr-only">0</span></div></div></div><div class="flex gap-1 overflow-x-auto border-b border-border"><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-primary text-foreground">All sports</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-transparent text-muted-foreground hover:text-foreground">Football</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-transparent text-muted-foreground hover:text-foreground">Basketball</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-transparent text-muted-foreground hover:text-foreground">Tennis</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-transparent text-muted-foreground hover:text-foreground">Volleyball</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-transparent text-muted-foreground hover:text-foreground">Ice Hockey</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold transition border-transparent text-muted-foreground hover:text-foreground">Esports</button></div><div class="flex gap-1 overflow-x-auto border-b border-border"><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-1.5 text-xs transition border-primary text-foreground">All markets</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-1.5 text-xs transition border-transparent text-muted-foreground hover:text-foreground">Winner</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-1.5 text-xs transition border-transparent text-muted-foreground hover:text-foreground">Totals / O-U</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-1.5 text-xs transition border-transparent text-muted-foreground hover:text-foreground">Handicap</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-1.5 text-xs transition border-transparent text-muted-foreground hover:text-foreground">Cards</button><button class="-mb-px whitespace-nowrap border-b-2 px-3 py-1.5 text-xs transition border-transparent text-muted-foreground hover:text-foreground">Corners</button></div><div class="space-y-3 rounded-xl border border-border bg-card p-3"><div class="flex flex-wrap items-center gap-2"><div class="flex flex-wrap rounded-lg bg-secondary p-0.5"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none bg-selected text-selected-foreground font-semibold hover:bg-selected hover:text-selected-foreground" aria-pressed="true">All</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">Surebets</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">Value bets</button></div><div class="flex flex-wrap rounded-lg bg-secondary p-0.5"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none bg-selected text-selected-foreground font-semibold hover:bg-selected hover:text-selected-foreground" aria-pressed="true">All</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">2-way</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">3-way</button></div><div class="flex flex-wrap rounded-lg bg-secondary p-0.5"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none bg-selected text-selected-foreground font-semibold hover:bg-selected hover:text-selected-foreground" aria-pressed="true">All</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">LIVE</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">Prematch</button></div><div class="ms-auto flex items-center gap-2 text-sm text-muted-foreground">Profit<!-- --> %<input type="number" step="0.5" min="0" aria-label="Min. profit" class="num w-16 rounded-lg border border-border bg-secondary px-2 py-1 text-foreground" value="0"/>–<input type="number" step="0.5" min="0" aria-label="Max. profit" class="num w-16 rounded-lg border border-border bg-secondary px-2 py-1 text-foreground" value="20"/></div></div><div class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">Source<!-- -->:<div class="flex flex-wrap rounded-lg bg-secondary p-0.5"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none bg-selected text-selected-foreground font-semibold hover:bg-selected hover:text-selected-foreground" aria-pressed="true">All</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">Browser collector</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">Direct API</button></div></div><details class="group rounded-lg border border-border p-2" open=""><summary class="cursor-pointer select-none text-sm font-semibold">Bookmakers<!-- --> · <!-- -->Families &amp; mirrors<!-- --> </summary><div class="mt-2 flex flex-wrap gap-1.5"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground">Sharp</button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground">Soft</button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground">Clear</button></div><div class="mt-2 grid gap-2 sm:grid-cols-2"><div class="rounded-lg bg-secondary/60 p-2"><button class="text-sm font-semibold ">1xBet</button><div class="mt-1 flex flex-wrap gap-1 border-s border-border ps-2"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=1xbet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">1xBet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=melbet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Melbet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=betwinner.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Betwinner</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=22bet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">22Bet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=megapari.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">MegaPari</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=888starz.bet&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">888Starz</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=fairpari.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">FairPari</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=winwin.bet&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">WinWin</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=paripesa.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">PariPesa</span></span></button></div></div><div class="rounded-lg bg-secondary/60 p-2"><button class="text-sm font-semibold ">Betfair</button><div class="mt-1 flex flex-wrap gap-1 border-s border-border ps-2"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=betfair.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Betfair</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=betfair.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Betfair Exchange</span></span></button></div></div><div class="rounded-lg bg-secondary/60 p-2"><button class="text-sm font-semibold ">Pinnacle</button><div class="mt-1 flex flex-wrap gap-1 border-s border-border ps-2"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=pinnacle.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Pinnacle</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=sbobet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">SBOBet</span></span></button></div></div><div class="rounded-lg bg-secondary/60 p-2"><button class="text-sm font-semibold ">Bet365</button><div class="mt-1 flex flex-wrap gap-1 border-s border-border ps-2"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=bet365.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Bet365</span></span></button></div></div><div class="rounded-lg bg-secondary/60 p-2"><button class="text-sm font-semibold ">Iran</button><div class="mt-1 flex flex-wrap gap-1 border-s border-border ps-2"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=betforward.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">BetForward</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=shahbet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">ShahBet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=yekbet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">YekBet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=ritzobet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">RitzoBet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=berrybet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">BerryBet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=cannonbet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">CannonBet</span></span></button></div></div><div class="rounded-lg bg-secondary/60 p-2"><button class="text-sm font-semibold ">Europe</button><div class="mt-1 flex flex-wrap gap-1 border-s border-border ps-2"><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=williamhill.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">William Hill</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=unibet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Unibet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=bwin.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">bwin</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=marathonbet.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Marathonbet</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=betway.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Betway</span></span></button><button class="rounded-full border px-2.5 py-0.5 text-xs transition border-border text-muted-foreground hover:text-foreground"><span class="inline-flex min-w-0 items-center gap-1.5"><img src="https://www.google.com/s2/favicons?domain=pin-up.com&amp;sz=64" alt="" width="16" height="16" loading="lazy" class="shrink-0 rounded bg-secondary"/><span class="truncate">Pin-Up</span></span></button></div></div></div></details><div class="flex flex-wrap items-center gap-4 text-sm text-muted-foreground"><label class="flex items-center gap-2">Required bookmaker<select class="rounded-lg border border-border bg-secondary px-2 py-1 text-foreground"><option value="" selected="">None</option><option>1xBet</option><option>Melbet</option><option>Betwinner</option><option>22Bet</option><option>MegaPari</option><option>888Starz</option><option>FairPari</option><option>WinWin</option><option>PariPesa</option><option>Betfair</option><option>Betfair Exchange</option><option>Pinnacle</option><option>SBOBet</option><option>Bet365</option><option>BetForward</option><option>ShahBet</option><option>YekBet</option><option>RitzoBet</option><option>BerryBet</option><option>CannonBet</option><option>William Hill</option><option>Unibet</option><option>bwin</option><option>Marathonbet</option><option>Betway</option><option>Pin-Up</option></select></label><label class="flex items-center gap-2"><input type="checkbox" class="accent-primary"/>Only my accounts<!-- --> <span class="num">(<!-- -->0<!-- -->)</span></label><label class="flex items-center gap-2">Max odds age<input type="range" min="10" max="300" step="10" class="accent-primary" value="300"/><span class="num min-w-12 text-foreground">300<!-- -->s</span></label></div><div class="flex flex-wrap items-center gap-4 text-sm text-muted-foreground"><label class="flex items-center gap-2"><input type="checkbox" class="accent-primary"/>Sound alert</label><label class="flex items-center gap-2"><input type="checkbox" class="accent-primary"/>Notifications</label><span class="flex items-center gap-2">above<!-- --> <input type="number" step="0.5" min="0" aria-label="above" class="num w-16 rounded-lg border border-border bg-secondary px-2 py-1 text-foreground" value="5"/>%</span></div></div><div class="flex flex-wrap items-center gap-3 rounded-xl border border-accent/40 bg-accent/10 p-3 text-sm"><span>Your plan<!-- -->: <b>Free</b> · <!-- -->Profit up to<!-- --> <span class="num">1%</span> · <!-- -->Live odds<!-- -->: <!-- -->Not included in your plan<!-- --> · <!-- -->Dropping odds<!-- -->: <!-- -->Not included in your plan</span><a class="ms-auto rounded-lg bg-accent px-3 py-1.5 font-semibold text-accent-foreground" href="/plans">See plans</a></div><div aria-busy="true" class="overflow-hidden rounded-lg border border-border divide-y divide-border"><div role="status" aria-label="Loading opportunities"><span class="sr-only">Loading opportunities</span><div aria-hidden="true" class="divide-y divide-border"><div class="bg-card even:bg-row-alternate p-4"><div class="flex items-start gap-3"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-11 w-24 shrink-0"></div><div class="min-w-0 flex-1 space-y-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-5 w-3/4"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-3 w-full max-w-64"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave hidden h-8 w-20 sm:block"></div></div><div class="mt-3 grid gap-2 sm:grid-cols-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave mt-3 h-1 w-full"></div></div><div class="bg-card even:bg-row-alternate p-4"><div class="flex items-start gap-3"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-11 w-24 shrink-0"></div><div class="min-w-0 flex-1 space-y-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-5 w-3/4"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-3 w-full max-w-64"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave hidden h-8 w-20 sm:block"></div></div><div class="mt-3 grid gap-2 sm:grid-cols-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave mt-3 h-1 w-full"></div></div><div class="bg-card even:bg-row-alternate p-4"><div class="flex items-start gap-3"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-11 w-24 shrink-0"></div><div class="min-w-0 flex-1 space-y-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-5 w-3/4"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-3 w-full max-w-64"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave hidden h-8 w-20 sm:block"></div></div><div class="mt-3 grid gap-2 sm:grid-cols-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave mt-3 h-1 w-full"></div></div><div class="bg-card even:bg-row-alternate p-4"><div class="flex items-start gap-3"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-11 w-24 shrink-0"></div><div class="min-w-0 flex-1 space-y-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-5 w-3/4"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-3 w-full max-w-64"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave hidden h-8 w-20 sm:block"></div></div><div class="mt-3 grid gap-2 sm:grid-cols-2"><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave h-16"></div></div><div class="animate-pulse rounded-md bg-primary/10 skeleton-wave mt-3 h-1 w-full"></div></div></div></div></div></section><aside class="space-y-4 lg:sticky lg:top-20 lg:self-start"><div class="rounded-xl border border-border bg-card p-4"><div class="font-semibold">Stake calculator</div><label class="mt-3 block text-xs text-muted-foreground">Total stake<!-- --> (USD)</label><div class="mt-1 flex items-center rounded-lg border border-input bg-secondary px-3" dir="ltr"><span class="text-muted-foreground">$</span><input type="number" min="0" class="num w-full bg-transparent px-2 py-2 outline-none" value="1000"/></div><div class="mt-3 text-xs text-muted-foreground">Stake rounding</div><div class="mt-1"><div class="flex flex-wrap rounded-lg bg-secondary p-0.5"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">Exact</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">$0.5</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none bg-selected text-selected-foreground font-semibold hover:bg-selected hover:text-selected-foreground" aria-pressed="true">$1</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">$5</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-8 rounded-md px-3 text-sm transition-colors motion-reduce:transition-none text-muted-foreground hover:bg-background hover:text-foreground" aria-pressed="false">$10</button></div></div><div class="mt-3 space-y-2"><div class="grid grid-cols-[1fr_1fr_auto] items-center gap-2"><input type="number" step="0.01" aria-label="Calculator 1" class="num min-w-0 w-full rounded-lg border border-input bg-secondary px-2 py-1.5" value="2.1"/><div class="num text-sm">$494.00</div><span></span></div><div class="grid grid-cols-[1fr_1fr_auto] items-center gap-2"><input type="number" step="0.01" aria-label="Calculator 2" class="num min-w-0 w-full rounded-lg border border-input bg-secondary px-2 py-1.5" value="2.05"/><div class="num text-sm">$506.00</div><span></span></div><button class="text-xs text-primary">+ <!-- -->Add outcome</button></div><div class="mt-4 space-y-1 rounded-lg p-3 text-sm bg-primary/10"><div class="flex flex-wrap justify-between gap-x-2"><span>Spent</span><span class="num">$1,000.00</span></div><div class="flex flex-wrap justify-between gap-x-2"><span>Payout</span><span class="num">$1,037.30</span></div><div class="flex flex-wrap justify-between gap-x-2 font-semibold"><span>Guaranteed profit</span><span class="num text-primary">$37.30<!-- --> (<!-- -->3.73%<!-- -->)</span></div></div></div></aside></div></main><footer class="border-t border-border"><div class="mx-auto max-w-7xl px-4 py-5 text-xs leading-relaxed text-muted-foreground"><p>ArbRadar provides odds information only. We do not accept bets, hold funds or act as a bookmaker. Gambling involves risk — play responsibly and only where legal. 18+.</p><p class="mt-1">© <!-- -->2026<!-- --> ArbRadar</p></div></footer></div><script>(function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||"{}")}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&&Number.isFinite(s)){if(t==="window")scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&&(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&&e.scrollIntoView(t)}return}scrollTo(0,0)})("tsr-scroll-restoration-v1_3");document.currentScript.remove()</script><!--/$--><script data-tsr-stream-part="">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-AH4Gt3VF.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/assets/index-AH4Gt3VF.js"}}]},"/":$R[8]={preloads:$R[9]=["/assets/routes-D4tP3Tu7.js","/assets/button-DY8OwZN-.js","/assets/arb-CuNXACS6.js","/assets/accounts-BXsf4uQ7.js","/assets/AppShell-CrC8thGY.js"]}}},matches:$R[10]=[$R[11]={i:"__root__ ",u:1792839624791,s:"success",ssr:!0},$R[12]={i:"  ",u:1792839624791,s:"success",ssr:!0}]})($R["tsr"]);$_TSR.e();{let s=document.currentScript,p;while((p=s.previousElementSibling)&&p.hasAttribute('data-tsr-stream-part'))p.remove();s.remove()}</script><script type="module" async="" src="/assets/index-AH4Gt3VF.js"></script><script>document.currentScript.remove();/*$tsr-stream-boundary*/</script>
+<aside
+	id="lovable-badge"
+	role="complementary"
+	dir="ltr"
+	lang="en"
+	aria-label="Edit with Lovable">
+	<a
+		id="lovable-badge-cta" 
+		target="_blank" 
+		href="https://lovable.dev/projects/lovp_5d8hmhp1qk8wds483z8kpgaz23?utm_source=lovable-badge"
+		rel="noopener nofollow"
+		aria-label="Edit with Lovable">
+		<span id="lovable-badge-text">Edit with</span>
+		<span id="lovable-badge-logo"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="16" fill="none" viewBox="0 0 52 16">
+  <path fill="#FCFBF8" fill-rule="evenodd" d="M20.318 5.25c.643 0 1.206.14 1.69.418a2.81 2.81 0 0 1 1.118 1.191c.266.513.4 1.115.4 1.807s-.134 1.296-.4 1.812a2.81 2.81 0 0 1-1.118 1.193c-.484.278-1.047.418-1.69.418s-1.208-.14-1.695-.418a2.85 2.85 0 0 1-1.125-1.193c-.262-.516-.393-1.12-.393-1.812s.131-1.294.393-1.807a2.848 2.848 0 0 1 1.125-1.191c.487-.279 1.052-.418 1.695-.418Zm0 1.425c-.27 0-.504.076-.7.228-.193.147-.34.37-.443.67-.102.295-.153.66-.153 1.093 0 .435.05.801.153 1.1.102.3.25.524.443.676.196.147.43.22.7.22.27 0 .502-.073.694-.22.193-.152.341-.375.443-.67.103-.299.153-.667.153-1.106 0-.65-.112-1.145-.337-1.481a1.08 1.08 0 0 0-.953-.51ZM32.7 5.25c.61 0 1.127.1 1.549.3.422.197.74.48.953.849.217.368.325.809.325 1.32v2.704c0 .29.02.562.062.812.044.245.108.4.19.466V12h-1.935a5.895 5.895 0 0 1-.105-.684 7.745 7.745 0 0 1-.02-.228 2.293 2.293 0 0 1-.151.203c-.205.242-.47.437-.793.584-.32.143-.685.215-1.094.215-.406 0-.77-.08-1.094-.24a1.845 1.845 0 0 1-.756-.682 1.984 1.984 0 0 1-.27-1.045c0-.606.178-1.069.535-1.388.356-.324.87-.534 1.542-.633l1.125-.16c.225-.032.403-.074.534-.123a.622.622 0 0 0 .288-.196.549.549 0 0 0 .093-.327.65.65 0 0 0-.11-.367.702.702 0 0 0-.32-.27c-.14-.07-.31-.105-.51-.105-.32 0-.576.083-.768.251-.193.164-.298.39-.314.676h-1.923c.016-.434.147-.82.393-1.155.25-.34.596-.604 1.039-.792.442-.189.954-.283 1.535-.283Zm.99 3.498a.98.98 0 0 1-.215.14 2.49 2.49 0 0 1-.584.178l-.473.092c-.315.061-.553.156-.713.283-.155.127-.233.305-.233.534 0 .23.084.412.252.547.168.135.383.203.645.203s.494-.058.694-.173c.201-.118.355-.282.461-.49.11-.21.166-.448.166-.714v-.6Zm4.526-2.375c.065-.125.138-.243.221-.349.197-.25.437-.44.719-.571.282-.135.6-.203.952-.203.528 0 .988.138 1.377.412.389.275.688.67.896 1.186.21.512.314 1.12.314 1.824 0 .7-.107 1.309-.32 1.825-.213.512-.518.906-.915 1.18-.393.275-.854.412-1.383.412-.352 0-.667-.062-.946-.184a1.832 1.832 0 0 1-.7-.554 2.2 2.2 0 0 1-.234-.383V12h-1.843V3h1.862v3.373Zm1.284.296c-.274 0-.51.085-.707.253-.192.163-.338.397-.436.7a3.376 3.376 0 0 0-.148 1.05c0 .406.05.759.148 1.058.098.299.243.53.436.694.197.164.433.246.707.246.279 0 .512-.082.7-.246.193-.164.336-.395.43-.694.099-.3.148-.652.148-1.058 0-.405-.05-.757-.147-1.056-.095-.299-.238-.53-.43-.694a1.015 1.015 0 0 0-.7-.253Zm9.416-1.419c.602 0 1.136.131 1.604.393.466.262.829.643 1.086 1.143.263.5.394 1.097.394 1.794 0 .25-.002.449-.006.596H47.51c.018.288.071.538.164.75a1.3 1.3 0 0 0 .491.596c.214.13.465.196.757.196.319 0 .583-.082.792-.246.209-.167.34-.403.393-.706h1.862a2.48 2.48 0 0 1-.485 1.235 2.54 2.54 0 0 1-1.051.805c-.439.188-.949.283-1.53.283-.655 0-1.225-.125-1.708-.375a2.672 2.672 0 0 1-1.13-1.143c-.267-.508-.4-1.137-.4-1.887 0-.712.14-1.327.418-1.843a2.86 2.86 0 0 1 1.155-1.186c.491-.27 1.051-.405 1.678-.405Zm-.044 1.345c-.274 0-.516.068-.725.203a1.29 1.29 0 0 0-.479.59 2.045 2.045 0 0 0-.132.498h2.562a1.873 1.873 0 0 0-.138-.602 1.061 1.061 0 0 0-.418-.516 1.243 1.243 0 0 0-.67-.173Z" clip-rule="evenodd"/>
+  <path fill="#FCFBF8" d="m26.605 9.995 1.342-4.566h1.924L27.628 12h-2.07l-2.33-6.57h1.98l1.397 4.565Zm-13.013.143h2.256c1.632 0 1.421 1.837 1.418 1.861h-5.603V3h1.93v7.138Zm31.516 1.861h-1.862V3h1.862v8.999Z"/>
+  <path fill="url(#a)" fill-rule="evenodd" d="M2.7 3c1.492 0 2.7 1.192 2.7 2.663v1.012h.9c1.49 0 2.7 1.192 2.7 2.662S7.791 12 6.3 12H0V5.663C0 4.193 1.209 3 2.7 3Z" clip-rule="evenodd"/>
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(-1.54236 7.07838 -10.231 -2.15602 4.627 5.022)" gradientUnits="userSpaceOnUse">
+      <stop offset=".106" stop-color="#FE7B02"/>
+      <stop offset=".394" stop-color="#FE3F21"/>
+      <stop offset=".608" stop-color="#F858BC"/>
+      <stop offset=".929" stop-color="#575ECF"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+</span>
+	</a>
+	
+	<span id="lovable-badge-divider" aria-hidden="true"></span>
+	
+	<button 
+		id="lovable-badge-close"
+		aria-label="Dismiss"
+		title="Dismiss"
+		type="button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+			<path d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z"/>
+		</svg>
+	</button>
+</aside>
+<script>
+	(() => {
+		if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+			const badge = document.querySelector('#lovable-badge');
+			if (badge) {
+				badge.style.display = 'none';
+			}
+			return;
+		}
+
+		const closeButton = document.querySelector('#lovable-badge-close');
+		if (closeButton) {
+			closeButton.addEventListener('click', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				const badge = document.querySelector('#lovable-badge');
+				if (badge) {
+					badge.classList.add('closing');
+					setTimeout(function() {
+						if (badge) {
+							badge.style.display = 'none';
+						}
+					}, 240);
+				}
+			});
+		}
+	})();
+</script>
+</body></html>

@@ -1,0 +1,23 @@
+// node test-rules.mjs — one assertion block per builder rule.
+import fs from "node:fs"; import assert from "node:assert/strict";
+import { pickEvents, isPriority } from "./sbobet.mjs";
+const src = fs.readFileSync(new URL("./collector.mjs", import.meta.url), "utf8");
+const C = JSON.parse(fs.readFileSync(new URL("./config.json", import.meta.url)));
+const build = new Function("C", src.slice(src.indexOf("const FAMILY"), src.indexOf("const NAME")) + src.slice(src.indexOf("const norm ="), src.indexOf("async function send")) + "return build;")(C);
+const row = (h, a, mk, league = "L", o = {}) => ({ sport: "Football", league, home: h, away: a, start: 0, live: false, o, mk });
+const res = {}; const ok = (n, f) => { try { f(); res[n] = "PASS"; } catch (e) { res[n] = "FAIL: " + e.message; } };
+const find = (out, ev, m) => out.find((x) => x.event === ev && x.market === m);
+ok("AH quarter-line pairing", () => { const out = build([{ book: "1xBet", rows: [row("A", "B", { "AH:-0.25": { h: 2.2, a: 1.6 } })] }, { book: "SBOBet", rows: [row("A", "B", { "AH:-0.25": { h: 1.7, a: 2.1 } })] }]);
+  const x = find(out, "A vs B", "Asian Handicap -0.25"); assert.ok(x); assert.deepEqual(x.outcomes.map((o) => [o.label, o.bookmaker]), [["A -0.25", "1xBet"], ["B +0.25", "SBOBet"]]); });
+ok("AH different lines not paired", () => assert.equal(build([{ book: "1xBet", rows: [row("A", "B", { "AH:-0.25": { h: 2.2 } })] }, { book: "SBOBet", rows: [row("A", "B", { "AH:0.25": { a: 2.2 } })] }]).length, 0));
+ok("OU keys", () => { const out = build([{ book: "1xBet", rows: [row("A", "B", { "OU:2.75": { o: 2.1, u: 1.7 } })] }, { book: "SBOBet", rows: [row("A", "B", { "OU:2.75": { o: 1.8, u: 2.05 } })] }]);
+  assert.deepEqual(find(out, "A vs B", "Over/Under 2.75").outcomes.map((o) => o.label), ["Over 2.75", "Under 2.75"]); });
+ok("regional league priority", () => { const evs = ["England Premier League", "Russia Premier League", "Kazakhstan Cup", "Spain LaLiga", "Australia NPL Victoria"].map((league, id) => ({ id, league }));
+  assert.deepEqual(pickEvents(evs, 3, C.priorityLeagueKeywords).map((e) => e.league), ["Russia Premier League", "Kazakhstan Cup", "Australia NPL Victoria"]); assert.ok(!isPriority("Spain LaLiga", C.priorityLeagueKeywords)); });
+ok(">200% dropped", () => assert.equal(build([{ book: "1xBet", rows: [row("A", "B", { "AH:0": { h: 10, a: 1.1 } })] }, { book: "SBOBet", rows: [row("A", "B", { "AH:0": { h: 1.1, a: 10 } })] }]).length, 0));
+ok("no same-family pairs", () => assert.equal(build([{ book: "1xBet", rows: [row("A", "B", { "AH:0": { h: 2.5, a: 1.5 } })] }, { book: "Melbet", rows: [row("A", "B", { "AH:0": { h: 1.5, a: 2.5 } })] }]).length, 0));
+ok("highEdge 20-200% kept+flagged, <20% unflagged", () => { const out = build([{ book: "1xBet", rows: [row("A", "B", { "AH:0": { h: 3, a: 1.2 } }), row("C", "D", { "AH:0": { h: 2.1, a: 1.5 } })] }, { book: "SBOBet", rows: [row("A", "B", { "AH:0": { h: 1.2, a: 3 } }), row("C", "D", { "AH:0": { h: 1.5, a: 2.1 } })] }]);
+  assert.equal(find(out, "A vs B", "Asian Handicap 0").highEdge, true); assert.equal(find(out, "C vs D", "Asian Handicap 0").highEdge, undefined); });
+ok("regional list never drops/flags", () => { const lg = "Russia Premier League"; const out = build([{ book: "1xBet", rows: [row("A", "B", { "AH:0": { h: 2.1, a: 1.5 } }, lg)] }, { book: "SBOBet", rows: [row("A", "B", { "AH:0": { h: 1.5, a: 2.1 } }, lg)] }]);
+  assert.equal(out.length, 1); assert.equal(out[0].highEdge, undefined); assert.ok(!/regionalExceptions/.test(src.replace(/\/\/.*$/gm, ""))); });
+console.log(res); if (Object.values(res).some((v) => v !== "PASS")) process.exit(1);

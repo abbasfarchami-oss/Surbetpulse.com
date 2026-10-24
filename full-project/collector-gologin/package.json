@@ -1,0 +1,1 @@
+{"name":"arbradar-collector-gologin","type":"module","private":true,"scripts":{"start":"node collector.mjs"},"dependencies":{"better-sqlite3":"^11.10.0","puppeteer-core":"^23.0.0"}}

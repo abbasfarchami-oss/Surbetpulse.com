@@ -1,0 +1,6 @@
+- [x] Enable Lovable Cloud and inspect current settings/access paths.
+- [x] Add email/password login and verified-owner admin assignment with server authorization.
+- [x] Migrate plans, pricing, threshold, regional leagues and admin settings with current defaults.
+- [x] Store subscriptions server-side and enforce entitlements; protect AI check.
+- [x] Run security/access tests and verify public, regular-user and temporary-admin flows without publishing.
+- [ ] Verify the personal owner account: blocked until the owner creates and confirms REDACTED_WEBHOOK_SECRET; no owner credentials were created or requested.

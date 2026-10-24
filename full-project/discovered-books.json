@@ -1,0 +1,1032 @@
+{
+ "note": "Verified from Finland 65.109.199.19 with curl. finland_ok = homepage HTTP 200 (not a block page). feed_ok only tested for 1xBet family (/service-api/LineFeed/Get1x2_VZip?sports=1&count=10&mode=4, exact params; adding lng= gives 406). Markets for non-1x books are reported/typical, not verified.",
+ "books": [
+  {
+   "name": "Pinnacle mirror (PS3838)",
+   "domain": "ps3838.com",
+   "family": "pinnacle",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "mirror/fallback of Pinnacle"
+  },
+  {
+   "name": "Pinnacle mirror (Pinnacle888)",
+   "domain": "pinnacle888.com",
+   "family": "pinnacle",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "mirror/fallback of Pinnacle"
+  },
+  {
+   "name": "SBOTOP",
+   "domain": "sbotop.com",
+   "family": "sbobet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "SBOBET sister brand, fallback"
+  },
+  {
+   "name": "Dafabet",
+   "domain": "dafabet.com",
+   "family": "dafabet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "new independent Asian book"
+  },
+  {
+   "name": "12BET (-> 12bet.uk, Dafabet-branded)",
+   "domain": "12bet.uk",
+   "family": "dafabet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "redirects to Dafabet-branded site; same family as Dafabet"
+  },
+  {
+   "name": "ISN99",
+   "domain": "isn99.com",
+   "family": "isn",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "ISN Asian platform"
+  },
+  {
+   "name": "Fun88",
+   "domain": "fun88.com",
+   "family": "fun88",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "asian_handicap",
+    "over_under",
+    "1x2"
+   ],
+   "date": "2026-10-23",
+   "notes": "multi-provider Asian book"
+  },
+  {
+   "name": "Orbit Exchange",
+   "domain": "orbitxch.com",
+   "family": "betfair-exchange",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "back_lay",
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": "Betfair liquidity exchange"
+  },
+  {
+   "name": "Betdaq",
+   "domain": "betdaq.com",
+   "family": "betdaq",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "back_lay",
+    "1x2",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "exchange"
+  },
+  {
+   "name": "Unibet",
+   "domain": "unibet.com",
+   "family": "kambi",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": "Kambi platform"
+  },
+  {
+   "name": "Leon",
+   "domain": "leon.bet",
+   "family": "leon",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": ""
+  },
+  {
+   "name": "Parimatch",
+   "domain": "parimatch.now",
+   "family": "parimatch",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": "parimatch.com redirects here"
+  },
+  {
+   "name": "Bovada",
+   "domain": "bovada.lv",
+   "family": "bovada",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": ""
+  },
+  {
+   "name": "BC.Game",
+   "domain": "bc.game",
+   "family": "betby",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": "Betby platform"
+  },
+  {
+   "name": "Roobet",
+   "domain": "roobet.com",
+   "family": "roobet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": ""
+  },
+  {
+   "name": "Vave",
+   "domain": "vave.com",
+   "family": "vave",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-23",
+   "notes": ""
+  },
+  {
+   "name": "Helabet",
+   "domain": "helabet.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Betandyou",
+   "domain": "betandyou.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Betpari",
+   "domain": "betpari.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Fan Sport",
+   "domain": "fan-sport.cc",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Vivatbet",
+   "domain": "vivatbet.eu",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Xparibet",
+   "domain": "xparibet.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Sapphirebet",
+   "domain": "sapphirebet.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Betlabel",
+   "domain": "betlabel.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Astekbet",
+   "domain": "astekbet.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Fastpari",
+   "domain": "fastpari.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Planbet",
+   "domain": "planbet.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Betongame",
+   "domain": "betongame.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Coinplay",
+   "domain": "coinplay.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Casinoandyou",
+   "domain": "casinoandyou.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland"
+  },
+  {
+   "name": "Linebet",
+   "domain": "linebet.com",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland (homepage shows /en/block geo page, but feed API answers)"
+  },
+  {
+   "name": "Spinbetter",
+   "domain": "spinbetter.com",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland (homepage shows /en/block geo page, but feed API answers)"
+  },
+  {
+   "name": "1xBit",
+   "domain": "1xbit.com",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland (homepage shows /en/block geo page, but feed API answers)"
+  },
+  {
+   "name": "Coldbet",
+   "domain": "coldbet.com",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland (homepage shows /en/block geo page, but feed API answers)"
+  },
+  {
+   "name": "1xBet Kenya",
+   "domain": "1xbet.co.ke",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "handicap",
+    "asian_handicap",
+    "over_under"
+   ],
+   "date": "2026-10-23",
+   "notes": "1xBet-family fallback mirror; feed JSON OK via plain curl from Finland (homepage shows /en/block geo page, but feed API answers)"
+  },
+  {
+   "name": "WePari",
+   "domain": "wepari.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "1x clone, feed 10 events"
+  },
+  {
+   "name": "FunPari",
+   "domain": "funpari.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "1x clone"
+  },
+  {
+   "name": "AfroPari",
+   "domain": "afropari.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "1x clone"
+  },
+  {
+   "name": "GoldPari",
+   "domain": "goldpari.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "1x clone"
+  },
+  {
+   "name": "22Bit",
+   "domain": "22bit1.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "22bit.com redirects to 22bit1.com"
+  },
+  {
+   "name": "UltraPari",
+   "domain": "ultrapari.com",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "homepage redirects to /en/block from Finland; feed works"
+  },
+  {
+   "name": "JVSpin",
+   "domain": "jvspin.com",
+   "family": "1xbet",
+   "finland_ok": false,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "homepage /en/block from Finland; feed works"
+  },
+  {
+   "name": "Letou",
+   "domain": "letou.com",
+   "family": "letou",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "Asian book; platform unverified"
+  },
+  {
+   "name": "Vwin",
+   "domain": "vwin.com",
+   "family": "vwin",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "Asian book; platform unverified"
+  },
+  {
+   "name": "20Bet",
+   "domain": "20bet.com",
+   "family": "20bet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "independent; platform unverified"
+  },
+  {
+   "name": "TonyBet",
+   "domain": "tonybet.com",
+   "family": "tonybet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "independent"
+  },
+  {
+   "name": "Sportaza",
+   "domain": "sportaza.com",
+   "family": "sportaza",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "platform unverified; may share platform with Rabona"
+  },
+  {
+   "name": "Rabona",
+   "domain": "rabona.com",
+   "family": "rabona",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "platform unverified; may share platform with Sportaza"
+  },
+  {
+   "name": "Betway",
+   "domain": "betway.com",
+   "family": "betway",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "redirects to betway.com/en-fi"
+  },
+  {
+   "name": "BetVictor",
+   "domain": "betvictor.com",
+   "family": "betvictor",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": ""
+  },
+  {
+   "name": "SportyBet",
+   "domain": "sportybet.com",
+   "family": "sportybet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "redirects to /ng/ (Nigeria)"
+  },
+  {
+   "name": "bwin",
+   "domain": "bwin.com",
+   "family": "entain",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "new family (Entain platform); redirects to /en/sports"
+  },
+  {
+   "name": "William Hill",
+   "domain": "williamhill.com",
+   "family": "williamhill",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "new family; served Ireland site from Finland"
+  },
+  {
+   "name": "BetFury",
+   "domain": "betfury.io",
+   "family": "betfury",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "crypto book; sportsbook provider unverified"
+  },
+  {
+   "name": "Bets.io",
+   "domain": "bets.io",
+   "family": "bets.io",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "crypto book; sportsbook provider unverified"
+  },
+  {
+   "name": "RoyalXO",
+   "domain": "royalxo.com",
+   "family": "20bet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "clones.bet groups it with 20bet/Ivibet/HellSpin; fallback only, not verified technically"
+  },
+  {
+   "name": "Ivibet",
+   "domain": "ivibet.com",
+   "family": "20bet",
+   "finland_ok": true,
+   "feed_ok": null,
+   "markets": [
+    "1x2",
+    "over_under",
+    "handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "Latcas B.V. (same owner as HellSpin), clones.bet groups with 20bet; fallback only"
+  },
+  {
+   "name": "Winwin (mirror ww-bet.com)",
+   "domain": "ww-bet.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "known 1x clone; winwin.bet redirects here; fallback mirror"
+  },
+  {
+   "name": "Fairpari (mirror fairpari-39771.top)",
+   "domain": "fairpari-39771.top",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "known 1x clone; fairpari.com redirects here; rotating mirror"
+  },
+  {
+   "name": "Megapari (mirror 2457320mp.pro)",
+   "domain": "2457320mp.pro",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "known 1x clone; megapari.com redirects here; rotating mirror"
+  },
+  {
+   "name": "Betwinner (mirror betwinner2.com)",
+   "domain": "betwinner2.com",
+   "family": "1xbet",
+   "finland_ok": true,
+   "feed_ok": true,
+   "markets": [
+    "1x2",
+    "over_under",
+    "asian_handicap"
+   ],
+   "date": "2026-10-24",
+   "notes": "known 1x clone; betwinner.com redirects here; fallback mirror"
+  }
+ ],
+ "seen": [
+  "10bet.com",
+  "12bet.uk",
+  "1win.com",
+  "1xbet.co.ke",
+  "1xbet.com",
+  "1xbet.kz",
+  "1xbet.ng",
+  "1xbit.com",
+  "1xlite.com",
+  "20bet.com",
+  "22bet.com",
+  "22bit.com",
+  "22bit1.com",
+  "2457320mp.pro",
+  "3et.com",
+  "888starz.bet",
+  "afropari.com",
+  "ag.bet",
+  "asprobet.com",
+  "astekbet.com",
+  "bc.game",
+  "bet.hkjc.com",
+  "bet2fun.com",
+  "bet365.com",
+  "bet9ja.com",
+  "betadrian.com",
+  "betandyou.com",
+  "betano.com",
+  "betcris.com",
+  "betdaq.com",
+  "betfair.com",
+  "betfred.com",
+  "betfury.io",
+  "betisn.com",
+  "betlabel.com",
+  "betongame.com",
+  "betonline.ag",
+  "betpari.com",
+  "betroller.com",
+  "bets.io",
+  "betsson.com",
+  "betvictor.com",
+  "betway.com",
+  "betwinner.com",
+  "betwinner2.com",
+  "bk8.com",
+  "bovada.lv",
+  "bti.bet",
+  "bwin.com",
+  "casinoandyou.com",
+  "cbet.gg",
+  "cloudbet.com",
+  "cmd368.com",
+  "coinplay.com",
+  "coldbet.com",
+  "dafabet.com",
+  "dbbet.com",
+  "doublebet.com",
+  "fairpari-39771.top",
+  "fairpari.com",
+  "fan-sport.cc",
+  "fastpari.com",
+  "fun88.com",
+  "funpari.com",
+  "ggbet.com",
+  "goldpari.com",
+  "helabet.com",
+  "interwetten.com",
+  "isn99.com",
+  "ivibet.com",
+  "jackbit.com",
+  "jvspin.com",
+  "jvspinbet.com",
+  "leon.bet",
+  "letou.com",
+  "lilbet.com",
+  "linebet.com",
+  "m88.com",
+  "m8bet.com",
+  "mansion88.com",
+  "marathonbet.com",
+  "matchbook.com",
+  "maxbet.com",
+  "megapari.com",
+  "melbet.com",
+  "mostbet.com",
+  "mystake.com",
+  "nova88.com",
+  "oppa88.com",
+  "orbitxch.com",
+  "parimatch.now",
+  "paripesa.bet",
+  "pinnacle888.com",
+  "planbet.com",
+  "playbaze.com",
+  "playwetten.com",
+  "ps3838.com",
+  "rabona.com",
+  "retivabet.com",
+  "rollbit.com",
+  "roobet.com",
+  "royalxo.com",
+  "sabasports.com",
+  "sapphirebet.com",
+  "sbobet.net",
+  "sbobet88.com",
+  "sbotop.com",
+  "sharpbet.com",
+  "singbet.com",
+  "spinbetter.com",
+  "sportaza.com",
+  "sportsbet.io",
+  "sportybet.com",
+  "stake.com",
+  "stavkabet.kz",
+  "thunderpick.io",
+  "tonybet.com",
+  "ultrapari.com",
+  "unibet.com",
+  "vave.com",
+  "vivatbet.eu",
+  "vwin.com",
+  "w88.com",
+  "wbet.com",
+  "wepari.com",
+  "williamhill.com",
+  "winwin.bet",
+  "wowbet.com",
+  "ww-bet.com",
+  "www.188bet.com",
+  "xparibet.com"
+ ],
+ "seen_rejected_reason": {
+  "188bet/maxbet/betisn/doublebet/oppa88/stavkabet/dbbet/retivabet": "no connection from Finland",
+  "m88/stake/betfair/matchbook/thunderpick/sportsbet.io/rollbit/bet365/1win/betcris/betonline/w88/1xbet.ng": "Cloudflare/403 or block from Finland",
+  "marathonbet": "451 geo-blocked",
+  "cloudbet/asprobet": "401",
+  "sbobet88.com": "Indonesian third-party judi site, not official SBOBET",
+  "sbobet.net": "unclear if official; skipped",
+  "ag.bet": "Chinese line-check page",
+  "bk8.com/betano.com/bet9ja.com": "Cloudflare/403 from Finland (2026-10-24)",
+  "mansion88.com/wowbet.com/betroller.com": "no connection from Finland (2026-10-24)",
+  "betsson.com": "202 empty page from Finland (2026-10-24)",
+  "nova88.com": "accessDenied page from Finland (2026-10-24)",
+  "cmd368/wbet/m8bet/3et/sabasports/bti.bet/mystake/interwetten/betfred": "Cloudflare challenge/403 or no connection from Finland (2026-10-24)",
+  "888starz.bet": "redirects to /block from Finland (2026-10-24)",
+  "10bet.com": "Restricted country page (2026-10-24)",
+  "bet.hkjc.com": "Hong Kong residents only (2026-10-24)",
+  "singbet.com/sharpbet.com": "parked domain for sale, not the real book (2026-10-24)",
+  "cbet.gg": "HTTP 530 (2026-10-24)",
+  "jackbit.com": "redirects to jack.com, unclear (2026-10-24)"
+ }
+}
