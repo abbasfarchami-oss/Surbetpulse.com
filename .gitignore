@@ -35,3 +35,8 @@ node_modules/
 config.json
 reader-state/
 *.log
+
+# secrets
+full-project/.gologin_token
+full-project/.sbobet_newpass
+full-project/.rclone_auth.out
